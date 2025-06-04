@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Projects - Team Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #2d3748;
+      background-color: #f7fafc;
+      margin: 0;
+    }
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+    nav .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #4a5568;
+      text-decoration-color: proiett-decoration none;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #2563eb;
+    }
+    .projects-section {
+      padding: 6rem 1rem 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .projects-section h2 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .projects-section .intro {
+      text-align: center;
+      color: #4a5568;
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      max-width: 768px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .filter-buttons button {
+      background-color: #e5e7eb;
+      color: #2d3748;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .filter-buttons button:hover {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+    .filter-buttons button.active {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .project-card {
+      background-color: #ffffff;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 1.5rem;
+    }
+    .project-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .project-content p {
+      color: #4a5568;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    .project-content .tech-stack {
+      color: #6b7280;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .project-content a {
+      display: inline-block;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .project-content a:hover {
+      text-decoration: underline;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta a {
+      display: inline-block;
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta a:hover {
+      background-color: #1d4ed8;
+    }
+    footer {
+      background-color: #1f2937;
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.875rem;
+    }
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .filter-buttons {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <h1>Team Portfolio</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <h2>Our Projects</h2>
+    <p class="intro">Explore our diverse portfolio of projects, showcasing our expertise in web development, mobile apps, and innovative solutions.</p>
+    
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="web">Web Apps</button>
+      <button data-filter="mobile">Mobile Apps</button>
+      <button data-filter="ai">AI Solutions</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-card" data-category="web">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <div class="project-content">
+          <h3>TaskSync Web</h3>
+          <p>A web application for real-time task management and team collaboration, built with modern frameworks.</p>
+          <p class="tech-stack">Technologies: React, Node.js, MongoDB</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+      <div class="project-card" data-category="mobile">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <div class="project-content">
+          <h3>ShopEasy Mobile</h3>
+          <p>A mobile-friendly e-commerce app with secure payment integration and intuitive navigation.</p>
+          <p class="tech-stack">Technologies: Flutter, Firebase, Stripe</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+      <div class="project-card" data-category="ai">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <div class="project-content">
+          <h3>SmartBot AI</h3>
+          <p>An AI-powered chatbot for automated customer support, integrated with natural language processing.</p>
+          <p class="tech-stack">Technologies: Python, TensorFlow, Dialogflow</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+      <div class="project-card" data-category="web">
+        <img src="https://via.placeholder.com/400x200" alt="Project 4">
+        <div class="project-content">
+          <h3>Portfolio Builder</h3>
+          <p>A customizable platform for creating professional portfolio websites with drag-and-drop features.</p>
+          <p class="tech-stack">Technologies: Vue.js, Express, PostgreSQL</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+      <a href="contact.html">Interested in Working With Us? Contact Us!</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Team Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
